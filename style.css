@@ -21,6 +21,7 @@
     display: flex;
     gap: 20px;
     list-style: none;
+    
    
 }
 nav a{
@@ -29,7 +30,7 @@ nav a{
 }
 .common-btn{
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 7px;
     background-color: #1D4ED8;
     border: none;
     text-decoration: none;
@@ -44,12 +45,37 @@ nav a{
 /* hero section */
 
 .hero-section{
-    height: 786px;
+    height: 650px;
     width: 100%;
+    color:#ffffff;
     background-image: url('./assets/banner.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:space-between ;
     align-items: center;
+   
 }   
+
+.hero-text{
+    text-align: center;
+    margin-top: 100px;
+    width: 60%;
+}
+.hero-text h1{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.hero-text h5{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.hero-btn{
+    margin-bottom: 60px;
+    padding: 20px 55px;
+    font-size: 19px;
+}
