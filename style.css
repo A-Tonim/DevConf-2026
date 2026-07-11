@@ -214,6 +214,11 @@ nav a{
     .card-2-header h1{
         color: #ffffff;
     }
+    .card-2-header h4{
+        color:#80a1e7;
+        font-size:18;
+        font-weight: 500;
+    }
     .card-2-details{
         color:#F8F9FB;
         font-family: inter;
@@ -227,3 +232,181 @@ nav a{
     .card-2-btn:hover{
         color:#020202
     }
+
+    
+/* Tech Time Capsule section */
+.capsule-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    font-family: 'Inter', sans-serif;
+}
+.capsule-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+}
+.capsule-intro h1{
+    font-size: 40px;
+}
+.capsule-intro h5{
+    color: #888888;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.capsule-counter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.capsule-counter h2{
+    font-size: 42px;
+    font-weight: 700;
+    color: #1D4ED8;
+}
+.capsule-counter p{
+    color: #888888;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.capsule-wrapper{
+    margin-top: 40px;
+    width: 1000px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Form card */
+.capsule-form{
+    flex: 1;
+    background-color: #F8F9FB;
+    border-radius: 10px;
+    box-shadow: 3px 5px 5px rgba(194, 190, 190, 0.25);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.capsule-form h3{
+    margin-bottom: 20px;
+    color: #0D1B2A;
+}
+.capsule-form label{
+    font-size: 14px;
+    font-weight: 600;
+    color: #0D1B2A;
+    margin-bottom: 6px;
+    margin-top: 14px;
+}
+.capsule-form input,
+.capsule-form select,
+.capsule-form textarea{
+    padding: 10px 12px;
+    border-radius: 7px;
+    border: 1px solid #d5d9e0;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    resize: none;
+}
+.capsule-form input:focus,
+.capsule-form select:focus,
+.capsule-form textarea:focus{
+    outline: none;
+    border: 1px solid #2563EB;
+}
+.capsule-submit-btn{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+
+/* Reveal / vault card */
+.capsule-reveal{
+    flex: 1;
+    background-color: #0D1B2A;
+    border-radius: 10px;
+    box-shadow: 3px 5px 5px rgba(194, 190, 190, 0.25);
+    padding: 25px;
+    color: #ffffff;
+}
+.capsule-reveal summary{
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    list-style: none;
+    color: #ffffff;
+    padding: 5px 0px;
+}
+.capsule-reveal summary::-webkit-details-marker{
+    display: none;
+}
+.capsule-reveal summary::after{
+    content: "  ⌄";
+    color: #80a1e7;
+    font-weight: 700;
+}
+.capsule-reveal[open] summary::after{
+    content: "  ⌃";
+}
+.capsule-past-grid{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    animation: capsuleReveal 0.4s ease;
+}
+@keyframes capsuleReveal{
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.capsule-past-card{
+    background-color: #16293e;
+    border-radius: 7px;
+    padding: 14px;
+}
+.capsule-past-card h5{
+    color: #80a1e7;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.capsule-past-card p{
+    font-size: 13px;
+    color: #F8F9FB;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+.capsule-past-card h4{
+    font-size: 12px;
+    color: #888888;
+    font-weight: 500;
+}
+
+@media (max-width: 800px){
+    .capsule-wrapper{
+        flex-direction: column;
+    }
+    .capsule-intro{
+        width: 85%;
+    }
+    .capsule-past-grid{
+        grid-template-columns: 1fr;
+    }
+}
