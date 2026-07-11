@@ -233,8 +233,7 @@ nav a{
         color:#020202
     }
 
-    
-/* Tech Time Capsule section */
+ /* Tech Time Capsule section */
 .capsule-section{
     width: 100%;
     display: flex;
@@ -277,7 +276,7 @@ nav a{
 
 .capsule-wrapper{
     margin-top: 40px;
-    width: 1000px;
+    width: 1400px;
     max-width: 90%;
     display: flex;
     flex-direction: row;
@@ -346,34 +345,51 @@ nav a{
     list-style: none;
     color: #ffffff;
     padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .capsule-reveal summary::-webkit-details-marker{
     display: none;
 }
-.capsule-reveal summary::after{
-    content: "  ⌄";
+.capsule-arrow{
+    display: inline-block;
     color: #80a1e7;
     font-weight: 700;
+    font-size: 18px;
+    transition: transform 0.3s ease;
 }
-.capsule-reveal[open] summary::after{
-    content: "  ⌃";
+.capsule-reveal[open] .capsule-arrow{
+    transform: rotate(180deg);
+}
+
+/* Smooth lid-opening reveal driven by the [open] attribute.
+   The grid-template-rows 0fr -> 1fr trick lets height itself
+   transition, which a plain max-height/opacity pair can't do cleanly. */
+.capsule-reveal-content{
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.35s ease, opacity 0.3s ease;
+}
+.capsule-reveal[open] > .capsule-reveal-content{
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+.capsule-reveal-inner{
+    overflow: hidden;
+    min-height: 0;
 }
 .capsule-past-grid{
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    animation: capsuleReveal 0.4s ease;
+    transform: translateY(-8px);
+    transition: transform 0.35s ease;
 }
-@keyframes capsuleReveal{
-    from{
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
+.capsule-reveal[open] .capsule-past-grid{
+    transform: translateY(0);
 }
 .capsule-past-card{
     background-color: #16293e;
@@ -399,14 +415,36 @@ nav a{
     font-weight: 500;
 }
 
-@media (max-width: 800px){
-    .capsule-wrapper{
-        flex-direction: column;
-    }
-    .capsule-intro{
-        width: 85%;
-    }
-    .capsule-past-grid{
-        grid-template-columns: 1fr;
-    }
+/* footer start */
+.footer-container{
+    width: 100%;
+    background-color:#0D1B2A ;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 40px 40px;
+
+}
+.footer-text{
+    margin-top: 10px;
+    color:#888888;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-text hr{
+    margin-bottom: 10px;
+    width:500px;
+}
+.icons a {
+  color: white;
+  font-size: 20px;
+  margin-left: 15px;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+.icons a:hover {
+  color: #4125f2; /* or whatever your accent color is */
 }
